@@ -34,8 +34,8 @@
     shapeCenter = (CGPoint){self.view.bounds.size.width * 0.5, self.view.bounds.size.height * 0.5};
     shapeRadius = (self.view.bounds.size.width > self.view.bounds.size.height)?self.view.bounds.size.height*0.2:self.view.bounds.size.width*0.2;
     shapeColor = [UIColor colorWithHue:(arc4random()%10)/10.0 saturation:1.0 brightness:1.0 alpha:1.0];
-    currentShape = (arc4random()%2==0)?SHAPE_TYPE_CIRCLE:SHAPE_TYPE_SQUARE;
-    shapeLayer = (currentShape==SHAPE_TYPE_CIRCLE)?[self getCircle]:[self getSquare];
+    currentShape = SHAPE_TYPE_TRIANGLE;
+    shapeLayer = [self getCurrenShapeLayer];
     [[self.view layer] addSublayer:shapeLayer];
 }
 
@@ -58,6 +58,23 @@
     return square;
 }
 
+- (CAShapeLayer*)getTriangle
+{
+    CAShapeLayer *triangle = [[CAShapeLayer alloc] init];
+    UIBezierPath *trianglePath = [[UIBezierPath alloc] init];
+    
+    [trianglePath moveToPoint:(CGPoint){shapeCenter.x - shapeRadius, shapeCenter.y + shapeRadius}];
+    [trianglePath addLineToPoint:(CGPoint){shapeCenter.x, shapeCenter.y - shapeRadius}];
+    [trianglePath addLineToPoint:(CGPoint){shapeCenter.x + shapeRadius, shapeCenter.y + shapeRadius}];
+    [trianglePath addLineToPoint:(CGPoint){shapeCenter.x - shapeRadius, shapeCenter.y + shapeRadius}];
+    
+    triangle.path = trianglePath.CGPath;
+    triangle.strokeColor = shapeColor.CGColor;
+    triangle.fillColor = shapeColor.CGColor;
+    triangle.lineWidth = 1;
+    
+    return triangle;
+}
 
 
 - (CAShapeLayer*)getCircle
@@ -81,9 +98,10 @@
     [CATransaction begin];
     [CATransaction setAnimationDuration:0.73];//1.0];
     [CATransaction setAnimationTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseInEaseOut]];
-    CAShapeLayer *newLayer = (currentShape==SHAPE_TYPE_SQUARE)?[self getCircle]:[self getSquare];
-    currentShape = (currentShape==SHAPE_TYPE_SQUARE)?SHAPE_TYPE_CIRCLE:SHAPE_TYPE_SQUARE;
-    shapeColor = [UIColor colorWithHue:(arc4random()%10)/10.0 saturation:1.0 brightness:1.0 alpha:1.0];
+    
+    currentShape = [self nextShape];
+    CAShapeLayer *newLayer = [self getCurrenShapeLayer];
+    shapeColor = [UIColor colorWithHue:( arc4random() % 10 ) /10.0 saturation:1.0 brightness:1.0 alpha:1.0];
     
     [CATransaction setCompletionBlock:^{
         [CATransaction begin];
@@ -131,4 +149,41 @@
         animationCompletionBlock();
     [shapeLayer removeAllAnimations];
 }
+
+- (SHAPE_TYPE)nextShape
+{
+    SHAPE_TYPE nextShape = currentShape;
+    while (nextShape == currentShape) {
+        nextShape = arc4random() % SHAPE_TYPE_MAX;
+    }
+    return nextShape;
+}
+
+-(CAShapeLayer*)getShapeLayerForShape:(SHAPE_TYPE)shapeType
+{
+    switch (shapeType) {
+        case SHAPE_TYPE_CIRCLE: {
+            return [self getCircle];
+            break;
+        }
+        case SHAPE_TYPE_SQUARE: {
+            return [self getSquare];
+            break;
+        }
+        case SHAPE_TYPE_TRIANGLE: {
+            return [self getTriangle];
+            break;
+        }
+        case SHAPE_TYPE_MAX: {
+            return nil;
+            break;
+        }
+    }
+}
+
+-(CAShapeLayer*)getCurrenShapeLayer
+{
+    return [self getShapeLayerForShape:currentShape];
+}
+
 @end
