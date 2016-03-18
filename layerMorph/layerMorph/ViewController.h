@@ -12,7 +12,8 @@ typedef NS_OPTIONS(u_int8_t, SHAPE_TYPE) {
     SHAPE_TYPE_CIRCLE = 0,
     SHAPE_TYPE_SQUARE = 1,
     SHAPE_TYPE_TRIANGLE = 2,
-    SHAPE_TYPE_MAX = 3
+    SHAPE_TYPE_PLUS = 3,
+    SHAPE_TYPE_MAX = 4
 };
 
 @interface ViewController : UIViewController

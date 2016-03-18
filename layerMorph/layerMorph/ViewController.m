@@ -39,6 +39,36 @@
     [[self.view layer] addSublayer:shapeLayer];
 }
 
+- (CAShapeLayer*)getPlus
+{
+    CAShapeLayer *plus = [[CAShapeLayer alloc] init];
+    UIBezierPath *plusPath = [[UIBezierPath alloc] init];
+    
+    double halfPlusWidth = shapeRadius * 0.25;
+    
+    [plusPath moveToPoint:(CGPoint){shapeCenter.x - halfPlusWidth, shapeCenter.y - shapeRadius}];
+    [plusPath addLineToPoint:(CGPoint){shapeCenter.x + halfPlusWidth, shapeCenter.y - shapeRadius}];
+    [plusPath addLineToPoint:(CGPoint){shapeCenter.x + halfPlusWidth, shapeCenter.y - halfPlusWidth }];
+    [plusPath addLineToPoint:(CGPoint){shapeCenter.x + shapeRadius, shapeCenter.y - halfPlusWidth}];
+    [plusPath addLineToPoint:(CGPoint){shapeCenter.x + shapeRadius, shapeCenter.y + halfPlusWidth}];
+    [plusPath addLineToPoint:(CGPoint){shapeCenter.x + halfPlusWidth, shapeCenter.y + halfPlusWidth}];
+    [plusPath addLineToPoint:(CGPoint){shapeCenter.x + halfPlusWidth, shapeCenter.y + shapeRadius}];
+    [plusPath addLineToPoint:(CGPoint){shapeCenter.x - halfPlusWidth, shapeCenter.y + shapeRadius}];
+    [plusPath addLineToPoint:(CGPoint){shapeCenter.x - halfPlusWidth, shapeCenter.y + halfPlusWidth}];
+    [plusPath addLineToPoint:(CGPoint){shapeCenter.x - shapeRadius, shapeCenter.y + halfPlusWidth}];
+    [plusPath addLineToPoint:(CGPoint){shapeCenter.x - shapeRadius, shapeCenter.y - halfPlusWidth}];
+    [plusPath addLineToPoint:(CGPoint){shapeCenter.x - halfPlusWidth, shapeCenter.y - halfPlusWidth}];
+    [plusPath addLineToPoint:(CGPoint){shapeCenter.x - halfPlusWidth, shapeCenter.y - shapeRadius}];
+    
+    plus.path = plusPath.CGPath;
+    plus.strokeColor = shapeColor.CGColor;
+    plus.fillColor = shapeColor.CGColor;
+    plus.lineWidth = 1;
+    
+    return plus;
+}
+
+
 - (CAShapeLayer*)getSquare
 {
     CAShapeLayer *square = [[CAShapeLayer alloc] init];
@@ -104,12 +134,6 @@
     shapeColor = [UIColor colorWithHue:( arc4random() % 10 ) /10.0 saturation:1.0 brightness:1.0 alpha:1.0];
     
     [CATransaction setCompletionBlock:^{
-        [CATransaction begin];
-        [CATransaction setDisableActions:YES];
-        [shapeLayer setFillColor:shapeColor.CGColor];
-        [shapeLayer setPath:newLayer.path];
-        [shapeLayer setStrokeColor:shapeColor.CGColor];
-        [CATransaction commit];
         animating = NO;
     }];
     
@@ -120,7 +144,8 @@
     pathAnimation.removedOnCompletion = YES;
     pathAnimation.cumulative = YES;
     [shapeLayer addAnimation:pathAnimation forKey:@"path"];
-   
+    [shapeLayer setPath:newLayer.path];
+    
     CABasicAnimation *fillColorAnimation = [CABasicAnimation animationWithKeyPath:@"fillColor"];
     //fillColorAnimation.duration = 2;
     
@@ -129,7 +154,7 @@
     fillColorAnimation.removedOnCompletion = NO;
     fillColorAnimation.cumulative = YES;
     [shapeLayer addAnimation:fillColorAnimation forKey:@"fillColor"];
-    
+    [shapeLayer setFillColor:shapeColor.CGColor];
     CABasicAnimation *strokeColorAnimation = [CABasicAnimation animationWithKeyPath:@"strokeColor"];
     //strokeColorAnimation.duration = 2;
     
@@ -138,7 +163,7 @@
     strokeColorAnimation.removedOnCompletion = NO;
     strokeColorAnimation.cumulative = YES;
     [shapeLayer addAnimation:strokeColorAnimation forKey:@"strokeColor"];
-    
+    [shapeLayer setStrokeColor:shapeColor.CGColor];
     [CATransaction commit];
 }
 
@@ -162,23 +187,16 @@
 -(CAShapeLayer*)getShapeLayerForShape:(SHAPE_TYPE)shapeType
 {
     switch (shapeType) {
-        case SHAPE_TYPE_CIRCLE: {
+        case SHAPE_TYPE_CIRCLE:
             return [self getCircle];
-            break;
-        }
-        case SHAPE_TYPE_SQUARE: {
+        case SHAPE_TYPE_SQUARE:
             return [self getSquare];
-            break;
-        }
-        case SHAPE_TYPE_TRIANGLE: {
+        case SHAPE_TYPE_TRIANGLE:
             return [self getTriangle];
-            break;
-        }
-        case SHAPE_TYPE_MAX: {
-            return nil;
-            break;
-        }
+        case SHAPE_TYPE_PLUS:
+            return [self getPlus];
     }
+    return nil;
 }
 
 -(CAShapeLayer*)getCurrenShapeLayer
