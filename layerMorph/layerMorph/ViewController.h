@@ -8,8 +8,22 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+typedef NS_OPTIONS(u_int8_t, SHAPE_TYPE) {
+    SHAPE_TYPE_CIRCLE = 0,
+    SHAPE_TYPE_SQUARE = 1,
+    SHAPE_TYPE_MAX = 2
+};
 
+@interface ViewController : UIViewController
+{
+    SHAPE_TYPE currentShape;
+    CGPoint shapeCenter;
+    CGFloat shapeRadius;
+    UIColor *shapeColor;
+    CAShapeLayer *shapeLayer;
+    bool animating;
+    int squareStartingIndex;
+}
 
 @end
 
