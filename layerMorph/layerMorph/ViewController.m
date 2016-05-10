@@ -22,7 +22,7 @@
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(changeShape)];
     [self.view addGestureRecognizer:tap];
     
-    NSTimer *automatedShapeShift = [NSTimer scheduledTimerWithTimeInterval:3 target:self selector:@selector(changeShape) userInfo:nil repeats:YES];
+//    NSTimer *automatedShapeShift = [NSTimer scheduledTimerWithTimeInterval:3 target:self selector:@selector(changeShape) userInfo:nil repeats:YES];
 }
 
 - (void)didReceiveMemoryWarning
