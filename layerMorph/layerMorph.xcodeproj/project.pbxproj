@@ -15,6 +15,7 @@
 		1A0EAE981C9C730B0086C7E2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1A0EAE961C9C730B0086C7E2 /* LaunchScreen.storyboard */; };
 		1A0EAEA31C9C730B0086C7E2 /* layerMorphTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A0EAEA21C9C730B0086C7E2 /* layerMorphTests.m */; };
 		1A0EAEAE1C9C730B0086C7E2 /* layerMorphUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A0EAEAD1C9C730B0086C7E2 /* layerMorphUITests.m */; };
+		1A0EAEBF1C9C95A90086C7E2 /* MorphLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A0EAEBE1C9C95A90086C7E2 /* MorphLabel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,8 @@
 		1A0EAEA91C9C730B0086C7E2 /* layerMorphUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = layerMorphUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1A0EAEAD1C9C730B0086C7E2 /* layerMorphUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = layerMorphUITests.m; sourceTree = "<group>"; };
 		1A0EAEAF1C9C730B0086C7E2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1A0EAEBD1C9C95A90086C7E2 /* MorphLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MorphLabel.h; path = MorphLabel/MorphLabel.h; sourceTree = "<group>"; };
+		1A0EAEBE1C9C95A90086C7E2 /* MorphLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MorphLabel.m; path = MorphLabel/MorphLabel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,7 +104,8 @@
 		1A0EAE871C9C730B0086C7E2 /* layerMorph */ = {
 			isa = PBXGroup;
 			children = (
-				1A0EAEBB1C9C732F0086C7E2 /* Shape */,
+				1A60FB4F1CA07D0C007C4C87 /* MorphShape */,
+				1A0EAEBC1C9C955A0086C7E2 /* MorphLabel */,
 				1A0EAE8B1C9C730B0086C7E2 /* AppDelegate.h */,
 				1A0EAE8C1C9C730B0086C7E2 /* AppDelegate.m */,
 				1A0EAE8E1C9C730B0086C7E2 /* ViewController.h */,
@@ -141,11 +145,20 @@
 			path = layerMorphUITests;
 			sourceTree = "<group>";
 		};
-		1A0EAEBB1C9C732F0086C7E2 /* Shape */ = {
+		1A0EAEBC1C9C955A0086C7E2 /* MorphLabel */ = {
+			isa = PBXGroup;
+			children = (
+				1A0EAEBD1C9C95A90086C7E2 /* MorphLabel.h */,
+				1A0EAEBE1C9C95A90086C7E2 /* MorphLabel.m */,
+			);
+			name = MorphLabel;
+			sourceTree = "<group>";
+		};
+		1A60FB4F1CA07D0C007C4C87 /* MorphShape */ = {
 			isa = PBXGroup;
 			children = (
 			);
-			name = Shape;
+			name = MorphShape;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -279,6 +292,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1A0EAE901C9C730B0086C7E2 /* ViewController.m in Sources */,
+				1A0EAEBF1C9C95A90086C7E2 /* MorphLabel.m in Sources */,
 				1A0EAE8D1C9C730B0086C7E2 /* AppDelegate.m in Sources */,
 				1A0EAE8A1C9C730B0086C7E2 /* main.m in Sources */,
 			);
@@ -506,6 +520,7 @@
 				1A0EAEB41C9C730B0086C7E2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1A0EAEB51C9C730B0086C7E2 /* Build configuration list for PBXNativeTarget "layerMorphTests" */ = {
 			isa = XCConfigurationList;
@@ -514,6 +529,7 @@
 				1A0EAEB71C9C730B0086C7E2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1A0EAEB81C9C730B0086C7E2 /* Build configuration list for PBXNativeTarget "layerMorphUITests" */ = {
 			isa = XCConfigurationList;
@@ -522,6 +538,7 @@
 				1A0EAEBA1C9C730B0086C7E2 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

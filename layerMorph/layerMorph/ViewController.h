@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MorphLabel.h"
 
 typedef NS_OPTIONS(u_int8_t, SHAPE_TYPE) {
     SHAPE_TYPE_CIRCLE = 0,
@@ -25,6 +26,9 @@ typedef NS_OPTIONS(u_int8_t, SHAPE_TYPE) {
     CAShapeLayer *shapeLayer;
     bool animating;
     int squareStartingIndex;
+    MorphLabel *shapeLabel;
+    
+    NSMutableArray *shapes;
 }
 
 @end
