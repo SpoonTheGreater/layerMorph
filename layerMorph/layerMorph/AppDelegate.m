@@ -9,6 +9,8 @@
 #import "AppDelegate.h"
 #import <Fabric/Fabric.h>
 #import <Crashlytics/Crashlytics.h>
+#import <OneSignal/OneSignal.h>
+
 @interface AppDelegate ()
 
 @end
@@ -19,7 +21,36 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     [Fabric with:@[[Crashlytics class]]];
-
+    [OneSignal initWithLaunchOptions:launchOptions appId:@"d426145b-9b95-4661-b889-c5fce3fd5ca9" handleNotificationAction:^(OSNotificationOpenedResult *result) {
+        
+        // This block gets called when the user reacts to a notification received
+        OSNotificationPayload* payload = result.notification.payload;
+        
+        NSString* messageTitle = @"OneSignal Example";
+        NSString* fullMessage = [payload.body copy];
+        
+        if (payload.additionalData) {
+            if(payload.title)
+                messageTitle = payload.title;
+            
+            NSDictionary* additionalData = payload.additionalData;
+            
+            if (additionalData[@"actionSelected"])
+                fullMessage = [fullMessage stringByAppendingString:[NSString stringWithFormat:@"\nPressed ButtonId:%@", additionalData[@"actionSelected"]]];
+        }
+        
+        UIAlertController * alertView = [UIAlertController alertControllerWithTitle:messageTitle message:fullMessage preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *closeAction = [UIAlertAction actionWithTitle:@"Close" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+    
+        }];
+        
+        [alertView addAction:closeAction];
+//        [[[UIApplication sharedApplication] keyWindow].rootViewController presentViewController:alertView animated:YES completion:^{
+//            
+//        }];
+        
+    }];
+    
     return YES;
 }
 
@@ -44,5 +75,16 @@
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
+
+- (void)application:(UIApplication *)application didReceiveRemoteNotification:(nonnull NSDictionary *)userInfo fetchCompletionHandler:(nonnull void (^)(UIBackgroundFetchResult))completionHandler
+{
+    NSDictionary *payload = userInfo[@"custom"][@"a"];
+    if( payload[@"action"] && [payload[@"action"] isEqualToString:@"NEXT"] )
+    {
+        if( [[[UIApplication sharedApplication] keyWindow].rootViewController respondsToSelector:@selector(changeShape)] )
+        [[[UIApplication sharedApplication] keyWindow].rootViewController performSelectorOnMainThread:@selector(changeShape) withObject:nil waitUntilDone:YES];
+    }
+}
+//application:didReceiveRemoteNotification:fetchCompletionHandler
 
 @end

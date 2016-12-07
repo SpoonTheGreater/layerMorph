@@ -31,5 +31,7 @@ typedef NS_OPTIONS(u_int8_t, SHAPE_TYPE) {
     NSMutableArray *shapes;
 }
 
+- (void)changeShape;
+
 @end
 

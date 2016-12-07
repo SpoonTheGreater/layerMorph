@@ -18,6 +18,9 @@
 		1A0EAEBF1C9C95A90086C7E2 /* MorphLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 1A0EAEBE1C9C95A90086C7E2 /* MorphLabel.m */; };
 		1A5941E61DAB81B1001C48F6 /* Fabric.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A5941E41DAB81B1001C48F6 /* Fabric.framework */; };
 		1A5941E71DAB81B1001C48F6 /* Crashlytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A5941E51DAB81B1001C48F6 /* Crashlytics.framework */; };
+		21D96DBC972E6A6709E60A3B /* libPods-layerMorphTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F25C082AE0141A361C0458BB /* libPods-layerMorphTests.a */; };
+		5B41CAD872F98A25FE8D31EB /* libPods-layerMorphUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 241DE640FAE6A5A78644279A /* libPods-layerMorphUITests.a */; };
+		7796FA6C200742FC732C0FCF /* libPods-layerMorph.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BCE6A220ED141D29948A7781 /* libPods-layerMorph.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +61,16 @@
 		1A0EAEBE1C9C95A90086C7E2 /* MorphLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MorphLabel.m; path = MorphLabel/MorphLabel.m; sourceTree = "<group>"; };
 		1A5941E41DAB81B1001C48F6 /* Fabric.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Fabric.framework; sourceTree = "<group>"; };
 		1A5941E51DAB81B1001C48F6 /* Crashlytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Crashlytics.framework; sourceTree = "<group>"; };
+		1A89F2C41DF8B91000DE4693 /* layerMorph.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = layerMorph.entitlements; sourceTree = "<group>"; };
+		237B4BEF3606D159FD832D64 /* Pods-layerMorphUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-layerMorphUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-layerMorphUITests/Pods-layerMorphUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		241DE640FAE6A5A78644279A /* libPods-layerMorphUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-layerMorphUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		35825B08348A4DCAD9F332D6 /* Pods-layerMorph.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-layerMorph.release.xcconfig"; path = "Pods/Target Support Files/Pods-layerMorph/Pods-layerMorph.release.xcconfig"; sourceTree = "<group>"; };
+		649F731CDDF4A626FA3D31AD /* Pods-layerMorphTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-layerMorphTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-layerMorphTests/Pods-layerMorphTests.debug.xcconfig"; sourceTree = "<group>"; };
+		BCE6A220ED141D29948A7781 /* libPods-layerMorph.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-layerMorph.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C8F483595E03531D538F5647 /* Pods-layerMorphUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-layerMorphUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-layerMorphUITests/Pods-layerMorphUITests.release.xcconfig"; sourceTree = "<group>"; };
+		DDC36E4EF198554C2792E3D5 /* Pods-layerMorph.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-layerMorph.debug.xcconfig"; path = "Pods/Target Support Files/Pods-layerMorph/Pods-layerMorph.debug.xcconfig"; sourceTree = "<group>"; };
+		EDB37C8E79BDFC5D8F443A46 /* Pods-layerMorphTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-layerMorphTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-layerMorphTests/Pods-layerMorphTests.release.xcconfig"; sourceTree = "<group>"; };
+		F25C082AE0141A361C0458BB /* libPods-layerMorphTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-layerMorphTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,6 +80,7 @@
 			files = (
 				1A5941E71DAB81B1001C48F6 /* Crashlytics.framework in Frameworks */,
 				1A5941E61DAB81B1001C48F6 /* Fabric.framework in Frameworks */,
+				7796FA6C200742FC732C0FCF /* libPods-layerMorph.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				21D96DBC972E6A6709E60A3B /* libPods-layerMorphTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +96,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5B41CAD872F98A25FE8D31EB /* libPods-layerMorphUITests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,6 +110,8 @@
 				1A0EAEA11C9C730B0086C7E2 /* layerMorphTests */,
 				1A0EAEAC1C9C730B0086C7E2 /* layerMorphUITests */,
 				1A0EAE861C9C730B0086C7E2 /* Products */,
+				624507CBA92740FE93CE9D00 /* Pods */,
+				4AF4ACD516260D50625E4CCD /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -110,6 +128,7 @@
 		1A0EAE871C9C730B0086C7E2 /* layerMorph */ = {
 			isa = PBXGroup;
 			children = (
+				1A89F2C41DF8B91000DE4693 /* layerMorph.entitlements */,
 				1A5941E41DAB81B1001C48F6 /* Fabric.framework */,
 				1A5941E51DAB81B1001C48F6 /* Crashlytics.framework */,
 				1A60FB4F1CA07D0C007C4C87 /* MorphShape */,
@@ -169,6 +188,29 @@
 			name = MorphShape;
 			sourceTree = "<group>";
 		};
+		4AF4ACD516260D50625E4CCD /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				BCE6A220ED141D29948A7781 /* libPods-layerMorph.a */,
+				F25C082AE0141A361C0458BB /* libPods-layerMorphTests.a */,
+				241DE640FAE6A5A78644279A /* libPods-layerMorphUITests.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		624507CBA92740FE93CE9D00 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DDC36E4EF198554C2792E3D5 /* Pods-layerMorph.debug.xcconfig */,
+				35825B08348A4DCAD9F332D6 /* Pods-layerMorph.release.xcconfig */,
+				649F731CDDF4A626FA3D31AD /* Pods-layerMorphTests.debug.xcconfig */,
+				EDB37C8E79BDFC5D8F443A46 /* Pods-layerMorphTests.release.xcconfig */,
+				237B4BEF3606D159FD832D64 /* Pods-layerMorphUITests.debug.xcconfig */,
+				C8F483595E03531D538F5647 /* Pods-layerMorphUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -176,10 +218,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1A0EAEB21C9C730B0086C7E2 /* Build configuration list for PBXNativeTarget "layerMorph" */;
 			buildPhases = (
+				E001ADAD7BB17C3A0BC7B68B /* [CP] Check Pods Manifest.lock */,
 				1A0EAE811C9C730B0086C7E2 /* Sources */,
 				1A0EAE821C9C730B0086C7E2 /* Frameworks */,
 				1A0EAE831C9C730B0086C7E2 /* Resources */,
 				1A5941E31DAB8194001C48F6 /* ShellScript */,
+				E90060A0B13335FF4F763E9F /* [CP] Embed Pods Frameworks */,
+				5C66CDAD00F70EE239CF9B4B /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -194,9 +239,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1A0EAEB51C9C730B0086C7E2 /* Build configuration list for PBXNativeTarget "layerMorphTests" */;
 			buildPhases = (
+				22BE5B885702E49685861EAF /* [CP] Check Pods Manifest.lock */,
 				1A0EAE9A1C9C730B0086C7E2 /* Sources */,
 				1A0EAE9B1C9C730B0086C7E2 /* Frameworks */,
 				1A0EAE9C1C9C730B0086C7E2 /* Resources */,
+				D54A4883559BACB8F933FD1E /* [CP] Embed Pods Frameworks */,
+				3889575A3A06F363C203A7FE /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -212,9 +260,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1A0EAEB81C9C730B0086C7E2 /* Build configuration list for PBXNativeTarget "layerMorphUITests" */;
 			buildPhases = (
+				85C782B6B5A4BF14BF3A4504 /* [CP] Check Pods Manifest.lock */,
 				1A0EAEA51C9C730B0086C7E2 /* Sources */,
 				1A0EAEA61C9C730B0086C7E2 /* Frameworks */,
 				1A0EAEA71C9C730B0086C7E2 /* Resources */,
+				D55DA1FAF00C8E0228D07994 /* [CP] Embed Pods Frameworks */,
+				6FCACD5ADF755388F6DCD54F /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -238,6 +289,14 @@
 					1A0EAE841C9C730B0086C7E2 = {
 						CreatedOnToolsVersion = 7.2;
 						DevelopmentTeam = 46K9FG5ZG8;
+						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					1A0EAE9D1C9C730B0086C7E2 = {
 						CreatedOnToolsVersion = 7.2;
@@ -309,6 +368,141 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "./Fabric.framework/run f3580a7ffbb2322eac670a86ac880aa4a851b544 48edb3f84b9ddc65b8a99596790587e5748dd8f878ba1827a5134432cc1b000a";
+		};
+		22BE5B885702E49685861EAF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		3889575A3A06F363C203A7FE /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-layerMorphTests/Pods-layerMorphTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5C66CDAD00F70EE239CF9B4B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-layerMorph/Pods-layerMorph-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6FCACD5ADF755388F6DCD54F /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-layerMorphUITests/Pods-layerMorphUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		85C782B6B5A4BF14BF3A4504 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		D54A4883559BACB8F933FD1E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-layerMorphTests/Pods-layerMorphTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D55DA1FAF00C8E0228D07994 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-layerMorphUITests/Pods-layerMorphUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E001ADAD7BB17C3A0BC7B68B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E90060A0B13335FF4F763E9F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-layerMorph/Pods-layerMorph-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -459,8 +653,10 @@
 		};
 		1A0EAEB31C9C730B0086C7E2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = DDC36E4EF198554C2792E3D5 /* Pods-layerMorph.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = layerMorph/layerMorph.entitlements;
 				DEVELOPMENT_TEAM = 46K9FG5ZG8;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -475,8 +671,10 @@
 		};
 		1A0EAEB41C9C730B0086C7E2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 35825B08348A4DCAD9F332D6 /* Pods-layerMorph.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = layerMorph/layerMorph.entitlements;
 				DEVELOPMENT_TEAM = 46K9FG5ZG8;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -491,6 +689,7 @@
 		};
 		1A0EAEB61C9C730B0086C7E2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 649F731CDDF4A626FA3D31AD /* Pods-layerMorphTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = layerMorphTests/Info.plist;
@@ -503,6 +702,7 @@
 		};
 		1A0EAEB71C9C730B0086C7E2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EDB37C8E79BDFC5D8F443A46 /* Pods-layerMorphTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				INFOPLIST_FILE = layerMorphTests/Info.plist;
@@ -515,6 +715,7 @@
 		};
 		1A0EAEB91C9C730B0086C7E2 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 237B4BEF3606D159FD832D64 /* Pods-layerMorphUITests.debug.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = layerMorphUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -527,6 +728,7 @@
 		};
 		1A0EAEBA1C9C730B0086C7E2 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C8F483595E03531D538F5647 /* Pods-layerMorphUITests.release.xcconfig */;
 			buildSettings = {
 				INFOPLIST_FILE = layerMorphUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
